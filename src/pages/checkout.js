@@ -47,7 +47,7 @@ function Checkout() {
                     <div className='flex flex-col bg-white p-10 shadow-md col-span-7 lg:col-span-2'>
                         {items.length > 0 && (
                             <>
-                                <h2 className='font-bold'>Subtotal  ({cartItemsCount} items) :{total}$</h2>
+                                <h2 className='font-bold'>Subtotal  ({cartItemsCount} items) :{parseFloat(total).toFixed(3)}$</h2>
                                 <div
                                     disabled={!session}
                                     className={`button mt-8 text-center 

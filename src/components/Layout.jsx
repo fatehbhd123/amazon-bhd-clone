@@ -6,8 +6,6 @@ function Layout({ title, children }) {
     return (
         <div className='h-screen'>
             <Head>
-
-
                 <title>{`Amazon - ${title}`}</title>
             </Head>
             <Header />
