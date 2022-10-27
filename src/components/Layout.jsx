@@ -3,6 +3,7 @@ import React from 'react'
 import Header from './Header'
 
 function Layout({ title, children }) {
+
     return (
         <div className='h-screen'>
             <Head>
