@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import Cookies from "js-cookie";
 const initialState = {
-  items: [],
+  items: Cookies.get('items') ? JSON.parse(Cookies.get('items')) : [],
 };
 
 export const cartSlice = createSlice({
@@ -19,13 +19,16 @@ export const cartSlice = createSlice({
       else {
         state.items = [...state.items, action.payload]
       }
+      Cookies.set('items', JSON.stringify(state.items));
     },
     removeFromCart: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload.id)
+      Cookies.set('items', JSON.stringify(state.items));
     },
     updateProduct: (state, action) => {
       const index = state.items.findIndex(item => item.id === action.payload.id);
       state.items[index] = { ...state.items[index], quantity: state.items[index].quantity + action.payload.qty }
+      Cookies.set('items', JSON.stringify(state.items));
     }
   },
 });
