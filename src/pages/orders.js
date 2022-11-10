@@ -8,6 +8,7 @@ import Order from '../components/Order';
 
 function Orders({ orders }) {
     console.log(orders)
+
     return (
         <Layout title='Orders'>
             <div className='p-10 max-w-screen-lg mx-auto'>
