@@ -87,7 +87,6 @@ function Checkout() {
                                                             total: total,
                                                             products: JSON.stringify(items),
                                                             delivery: false,
-                                                            timestamp: Timestamp
                                                         });
                                                         router.push('/success')
                                                     });
