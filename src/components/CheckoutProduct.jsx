@@ -23,6 +23,7 @@ function CheckoutProduct({ product }) {
                     {product.price}$
                 </div>
             </div>
+
             <div className='flex flex-col space-y-2 my-auto justify-self-end text-2xl'>
                 <div className='flex items-center justify-evenly'>
                     <span className={`${product.quantity > 1 ? 'text-red-500' : 'text-red-300'}  cursor-pointer font-bold`} onClick={() => handleUpdate(-1)}>-</span>
