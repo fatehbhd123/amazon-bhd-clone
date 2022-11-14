@@ -12,8 +12,8 @@ function CheckoutProduct({ product }) {
     }
     return (
         <div className='grid grid-cols-5'>
-            <Image src={product.image} height={200} width={200} objectFit='contain' />
-            <div className='col-span-3 mx-5'>
+            <Image src={product.image} height={200} width={200} objectFit='contain' className='col-span-3 md:col-span-1' />
+            <div className='col-span-5 md:col-span-3 mx-5'>
                 <p>{product.title}</p>
                 {Array(product.rating).fill().map((_, i) => {
                     return (<StarIcon key={i} className='h-5 text-yellow-500' />)
@@ -24,7 +24,7 @@ function CheckoutProduct({ product }) {
                 </div>
             </div>
 
-            <div className='flex flex-col space-y-2 my-auto justify-self-end text-2xl'>
+            <div className='col-span-5 md:col-span-1 flex flex-col space-y-2 my-auto justify-self-end text-2xl'>
                 <div className='flex items-center justify-evenly'>
                     <span className={`${product.quantity > 1 ? 'text-red-500' : 'text-red-300'}  cursor-pointer font-bold`} onClick={() => handleUpdate(-1)}>-</span>
                     <span>{product.quantity}</span>
